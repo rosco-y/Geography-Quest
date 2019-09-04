@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 193344658}
   - component: {fileID: 193344657}
   - component: {fileID: 193344656}
+  - component: {fileID: 193344661}
   - component: {fileID: 193344660}
   m_Layer: 0
   m_Name: player
@@ -215,7 +216,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &193344660
+--- !u!143 &193344660
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193344655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &193344661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,18 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ffcebee8307da418fa3583f89ebcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialPosition: {x: 0, y: 0, z: 0}
-  moveDirection: {x: 0, y: 0, z: 0}
-  rotateSpeed: 0
-  movespeed: 0
-  speedSmoothing: 10
-  maxSpeed: 0
-  gravity: 0
-  _animator: {fileID: 0}
-  hat: {fileID: 0}
-  body: {fileID: 0}
-  idleState: 0
-  runState: 0
+  _moveDirection: {x: 0, y: 0, z: 0}
+  _rotateSpeed: 100
+  _moveSpeed: 10
+  _speedSmoothing: 10
 --- !u!1 &465264850
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +338,7 @@ Transform:
   m_GameObject: {fileID: 465264850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -366,7 +377,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -519,13 +530,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0052799ad85e4ad47a6f5ecf38b6810f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackObj: {fileID: 193344655}
-  lookObj: {fileID: 963194225}
-  height: 0
-  desiredDistance: 0
-  rotDamp: 0
-  heightDamp: 0
-  kh: 0
+  _trackObj: {fileID: 193344655}
+  _height: 0.25
+  _desiredDistance: 4
+  _heightDamp: 0.5
+  _rotDamp: 0.01
 --- !u!1 &1190106859
 GameObject:
   m_ObjectHideFlags: 0
