@@ -40,7 +40,7 @@ public class GameCamera : MonoBehaviour
                         float height = transform.position.y;
 
                         /****************************************************************
-                         * Now we are ready to lerp towards our desired position and 
+                         * Now we are ready to lerp towards our desired height and 
                          * rotation.
                          ****************************************************************/
                         rotAngle = Mathf.LerpAngle(rotAngle, desiredRotationAngle, _rotDamp);
