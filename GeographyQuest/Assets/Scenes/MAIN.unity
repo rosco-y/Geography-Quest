@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 193344658}
   - component: {fileID: 193344657}
   - component: {fileID: 193344656}
+  - component: {fileID: 193344660}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -170,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 152dd0939f3adee42a6a46040f923da8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -214,6 +215,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193344660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193344655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ffcebee8307da418fa3583f89ebcc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPosition: {x: 0, y: 0, z: 0}
+  moveDirection: {x: 0, y: 0, z: 0}
+  rotateSpeed: 0
+  movespeed: 0
+  speedSmoothing: 10
+  maxSpeed: 0
+  gravity: 0
+  _animator: {fileID: 0}
+  hat: {fileID: 0}
+  body: {fileID: 0}
+  idleState: 0
+  runState: 0
 --- !u!1 &465264850
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +289,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f5825bbe04b8cc449a10dac1f6d15608, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -491,14 +516,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c39a50b94ac8774181d8d3e0b00bb46, type: 3}
+  m_Script: {fileID: 11500000, guid: 0052799ad85e4ad47a6f5ecf38b6810f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trackObj: {fileID: 193344655}
-  _height: 0.5
-  _desiredDistance: 4
-  _heightDamp: 0.5
-  _rotDamp: 0.01
+  trackObj: {fileID: 193344655}
+  lookObj: {fileID: 963194225}
+  height: 0
+  desiredDistance: 0
+  rotDamp: 0
+  heightDamp: 0
+  kh: 0
 --- !u!1 &1190106859
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +589,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8b9a1f3bd1a1d6945a209fbf534accee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
